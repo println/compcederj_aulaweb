@@ -196,7 +196,6 @@
             width: 420px;
             padding: 30px;
             background-color: black;
-            opacity: 0.8;
         }
 
         #credits p {
@@ -286,6 +285,10 @@
     <![endif]-->
     <script type="text/javascript" src="jquery.min.js"></script>
     <script type="text/javascript">
+        function isProduction(){
+            return /github.io/.test(window.location.href);
+        }
+
         function getLessonClassRoomData(course, lesson) {
             lesson = String(lesson).padStart(2, '0');
 
@@ -437,7 +440,7 @@
                 }
             });
 
-            $('.button').on('click', function () {
+            $('.button.action').on('click', function () {
                 var e = $(this);
                 if (e.is('.refresh')) loadClassRoom();
                 if (e.is('.download')) return true;
@@ -451,6 +454,10 @@
             $('#credits').click(function () {
                 $(this).fadeOut('normal');
             });
+
+            if(isProduction()){
+                $('#contador').attr(src, "https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fprintln.github.io%2Fcompcederj_aulaweb%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitas&edge_flat=true");
+            }
         });
     </script>
 </head>
@@ -509,8 +516,8 @@
         </select>
     </div>
     <div class="box misc">
-        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fprintln.github.io%2Fcompcederj_aulaweb%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitas&edge_flat=true"/>
-        <a href="#" class="button credits no-text fab fa-dev fa-lg transparent" title="Desenvolvedores">Desenvolvedores</a>
+        <img id="contador" src="images/badge.svg"/>
+        <a href="#" class="button action credits no-text fab fa-dev fa-lg transparent" title="Desenvolvedores">Desenvolvedores</a>
     </div>
 </header>
 <main id="content" class="app-loading">
@@ -519,16 +526,16 @@
             <a href="#" class="button download no-text fas fa-file-video fa-lg" title="Baixar Aula MP4" target="_blank">
                 Baixar Aula .MP4
             </a>
-            <a href="#" class="button refresh no-text fa fa-sync-alt fa-lg" title="Recarregar Aula">
+            <a href="#" class="button action refresh no-text fa fa-sync-alt fa-lg" title="Recarregar Aula">
                 Recarregar
             </a>
-            <a href="#" class="button delete no-text fa fa-window-close fa-lg" title="Remover Aula">
+            <a href="#" class="button action delete no-text fa fa-window-close fa-lg" title="Remover Aula">
                 Remover
             </a>
-            <a href="#" class="button fullscreen no-text fa fa-compress fa-lg" title="Tela cheia">
+            <a href="#" class="button action fullscreen no-text fa fa-compress fa-lg" title="Tela cheia">
                 Tela cheia
             </a>
-            <a href="#" class="button toggle-selector no-text fa fa-angle-double-up fa-lg" title="Esconder Seletor">
+            <a href="#" class="button action toggle-selector no-text fa fa-angle-double-up fa-lg" title="Esconder Seletor">
                 Esconder seletores
             </a>
         </div>
@@ -539,7 +546,7 @@
     <p><strong>Educ. Bruno(NIT)</strong>Ideia de Projeto</p>
     <p><strong>gustavomca(Saq)</strong>Download flv</p>
     <p>1° versão - 04/07/2011 - html5 e css3 válidos</p>
-    <p>31/05/2021 - Versão 0.5.2</p>
+    <p>01/05/2021 - Versão 0.5.2</p>
     <p><a class="button active" href="https://github.com/println/compcederj_aulaweb">Repositório Github</a></p>
 </section>
 
