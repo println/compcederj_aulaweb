@@ -1,427 +1,544 @@
 <!DOCTYPE html>
-<html><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<title>Aulas na WEB</title>
-		<meta charset="UTF-8">
-		<meta content="Video Aulas Online" name="description">
-		<meta content="General" name="rating">
-		<meta content="Proto" name="author">
-		<meta content="Educ. Bruno" name="author">
-		<style type="text/css" media="screen">
-			/*
-			reset css
-			*/
-			html, body, div, span, applet, object, iframe, table, caption,
-			tbody, tfoot, thead, tr, th, td, del, dfn, em, font, img, ins,
-			kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
-			h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
-			acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,
-			fieldset, form, label, legend {
-			    vertical-align: baseline;
-			    font-family: inherit;
-			    font-weight: inherit;
-			    font-style: inherit;
-			    font-size: 100%;
-			    outline: 0;
-			    padding: 0;
-			    margin: 0;
-			    border: 0;
-			}
-			:focus {
-			    outline: 0;
-			}
-			body {
-			    background: white;
-				position:relative;
-			    color: black;
-			}
-			ol, ul {
-			    list-style: none;
-			}
-			table {
-			    border-collapse: separate;
-			    border-spacing: 0;
-			}
-			caption, th, td {
-			    font-weight: normal;
-			    text-align: left;
-			}
-			blockquote:before, blockquote:after, q:before, q:after {
-			    content: "";
-			}
-			blockquote, q {
-			    quotes: "" "";
-			}
-			/*
-			reset css
-			*/
-			*,html,body {
-				padding:0;
-				margin:0;
-				color: #333333;
-				font-family:Arial, Helvetica, sans-serif;
-			}
-			#selector{
-				background-color:#0071BC;
-				padding: 20px;
-				padding-top:5px;
-				position: relative;
-			}
-			h2{
-				font-weight:normal;
-				color:white;
-				font-size:1.5em;
-			}
-			strong{
-				font-weight: bold;
-			}
-			h2>strong{
-				font-size:2em;
-				color:#FBB03B;
-				margin-right:10px;
-			}
-			select{
-				    border: 1px solid #004080;
-				    font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
-				    font-size: 11px;
-				    padding: 2px;
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>Aulas na WEB</title>
+    <meta charset="UTF-8">
+    <meta content="Video Aulas Online" name="description">
+    <meta content="General" name="rating">
+    <meta content="Proto" name="author">
+    <meta content="Educ. Bruno" name="author">
+    <link rel="stylesheet" href="css/all.min.css">
+    <style type="text/css" media="screen">
+        /* reset css */
+        html, body, div, span, applet, object, iframe, table, caption,
+        tbody, tfoot, thead, tr, th, td, del, dfn, em, font, img, ins,
+        kbd, q, s, samp, small, strike, strong, sub, sup, tt, var,
+        h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr,
+        acronym, address, big, cite, code, dl, dt, dd, ol, ul, li,
+        fieldset, form, label, legend {
+            vertical-align: baseline;
+            font-family: inherit;
+            font-weight: inherit;
+            font-style: inherit;
+            font-size: 100%;
+            outline: 0;
+            padding: 0;
+            margin: 0;
+            border: 0;
+        }
 
-					margin: 2px 0 0;
-					font-size: 13px;
-    				height: 30px;
-    				padding: 5px;
-					min-width:300px;
-			}
-			select.new{
-				background-color:#00E300;
-			}
-			optgroup{
-				font-style:normal;
-				color:#CCC;
-				padding-left:2px;
-				
-			}
-			option{
-				background-color:white;
-				padding-left:7px;
-			}
-			.box{
-				float:left;
-				margin-right:20px;
-			}
-			.aula strong{
-				color:#00E300;
-			}
-			.box.download{
-				display:none;
-			}
-			.download strong{
-				color:#E30000;
-			}
-			#content{
-				position:relative;
-				padding:20px;
-				background-color:#EEE;
-				height:auto;
-			}
-			#credits{
-				display:none;
-				position:absolute;
-				top:50%;
-				left:50%;
-				margin-left:-240px;
-				margin-top:-50px;
-				z-index:1000;
-				width:420px;
-				padding:30px;
-				background-color:black;
-				opacity:0.8;
-			}
-			#credits p{
-				color:white;
-			}
-			#credits strong{
-				color:white;
-				margin-right:10px;
-			}
-			iframe{
-				height:100%;
-				width:100%;
-				border:0 none;
-			}
-			.clear{
-				clear:both;
-			}
-			.bar{
-				position: absolute;
-				bottom: 10px;
-				right:10px;
-			}
-			/*botao*/
-			div.botao{
-				float:left;
-				background-color:#004080;
-				padding: 1px 0;
-				padding-left:1px;
-				opacity:0.5;
-				
-			}
-			div.botao:hover{
-				opacity:1;
-			}
-			div.botao>a{
-				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAeCAYAAAFicr+mAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAGxJREFUeNpiYEAHjEDMDGKwADEfiAEQQKiImQkkDhBADDgBSD8XjINiBkAAEYNQbGfHzgAIIAoRIxSjAJDhbNgE2YkSBAigQYhwepMJmyALNkFmeqgECLBRRDAamYhRiDXEcSlkHjiFLANjIgAgTQD6w7HbVgAAAABJRU5ErkJggg==);
-				background-repeat:repeat-x;
-				background-position:bottom left;
-				background-color:#FFF;
-				display:block;
-				height:22px;				
-				line-height:22px;
-				padding:0 8px 0 7px;
-				overflow:hidden;
-				color:#3293BE;
-				float:left;
-				margin-right:1px;
-				opacity:0.8;
-				font-size: 11px;
-				text-decoration: none;
-			}
-			div.botao>a.active{
-				background-color: orange;
-			}
-			div.botao>a:hover{
-				margin:-1px 0px -1px -1px;
-				border:1px solid black;
-				color:#115884;
-				opacity:1;
-			}
-			div.botao>a:active{
-				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAAeCAYAAAFicr+mAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAKxJREFUeNpiZGBgSAViBhYgfghiMAMxGxB/YgQS/CARgAACoVSQsAhYDkT8BgggkGQoTBKk9xGMA5IGyX4GYUaoLBgABBAjsl0fYIyPGIxPMMZnZPN+wc0CCCAQI5YBDcBNIF/wEzbBz+iCINs50QUBAgjuNXTtP4gW/EkvlcQL/qJM5S9socSCLggQYCDBRAYiAFZfUqzw58CZOKwU/qKqQkZoIUSUQkZiFAIAENgr9gQdQXIAAAAASUVORK5CYII=);
-				background-repeat:repeat-x;
-				background-position:top left;
-				background-color:white;
-			}
-			.botao>a>span{
-				background-repeat:no-repeat;
-				background-position: center center;
-				display:block;
-				float:left;
-				width:12px;
-				height:100%;
-				margin-right:4px;	
-			}
-			.botao.float-right{
-				float:right;
-			}
-			div.botao>a.no-text{
-				width:10px;
-			}
-			.botao>.delete>span{
-				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAIZJREFUeNpiZACCg+q684GUARA72t+8/IEBCQDlBIDUfiC+AJRLZIQqToDKX0DWhKTYACq/gAWJwwBl7wcqdITy96PLM4FMhJqMogmLYrDtjDisRgdwpzJi8ZwBLsUgDhMDiYB0J+FQfAEpAFA0MeEKDVyhx4QmCLca6kl0TRcYSU0aAAEGAIJJR/kKSDcuAAAAAElFTkSuQmCC);
-			}
-			.botao>.download>span{
-				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAElJREFUeNpiZEAGhXv+M2AD/S6MMCYTA4lgRGpghAbnfCCZQEDtAmDwJjIixQE+TWDFCBvwa4IrxtSAqQlFMW4A0gTRiAEAAgwAMAAWquu7PhgAAAAASUVORK5CYII=);
-			}
-			.botao>.refresh>span{
-				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAANNJREFUeNp0UYERgjAMTDsBG4gTiBMI1wVwAhkBJtANwA3cQBfoCRs4giPUDfxg4GIPevdJePLlEwzx8ZQjMjZASo4KWjkGzTVyG/FbiN7zk6cSsQcXLIoD8IoEmWrm+g48UScWqiMeklUB0UlxtRX/qZCd5Mfc7qgZ7YjYyrD6ZYMcW7xKTq0ig4i6heWEqbBq4ETsLZ1pjnFLvbqh5U38tXqqEKtpNiOk/hcsvgEfYAeUit8bddMF8bxiiZsLXoaJPp+L30xWzfMN47rdz/ZXgAEAqo4vnIk80goAAAAASUVORK5CYII=);
-			}
-			.botao>.credits>span{
-				background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAALFJREFUeNpiZEAD3yfLGQCpACShC5y5jzbAOIxoCtcDsQIDJngAxIUgjYxQxQ5Aaj8DYRDIBGXMR3YCSAKIHaH0Aaj4ApAcI9D0AKhTYFYbAq3+gOYvBaAYSI4BZIMBktxCdMUgAFMM00ASYII6AwbisSkCOQlZAyiMYc5QAEruh4YaOPSAGOS/+0C6AR4PQE4CWkjhD1agpxZAg/ABDoUg8UB4xKG5NwAt5FCSBkCAAQC8AECUrUb74gAAAABJRU5ErkJggg==);
-			}
-		</style>
-		<!--[if lt IE 9]>
-        <style type="text/css" media="screen">
-        	div.botao{
-				filter: Alpha(Opacity=50);
-			}
-        	div.botao>a,#credits{
-				filter: Alpha(Opacity=80);
-			}
-    		div.botao>a:hover, div.botao:hover{
-				filter: Alpha(Opacity=100);
-			}
-        </style>
-		<![endif]-->
-		<script type="text/javascript" src="jquery.min.js"></script>
-		<script type="text/javascript">
-			<!--
-			var active = true;
-			var download = false;
-			function getLinks(disciplina,aula){
-				var url;
-				var ext;
-				var links = new Object();
-				
-				url = 'http://edad.rnp.br/redirect.rio?file=/cederj/sistemas_comp/ead050';
-				ext = '.flv';
-				links.video = url  + disciplina + '/Aula_0' + aula + '/Aula_0' + aula + ext
+        :focus {
+            outline: 0;
+        }
 
-				url = 'http://edad.rnp.br/rioflashclient.php?xmlfile=/cederj/sistemas_comp/ead050';
-				ext = '.xml';
-				links.aula = url  + disciplina + '/Aula_0' + aula + '/Aula_0' + aula + ext
-					
-				return links;
-			}
-			function getFile(){
-				
-			}
-			function remove(){
-				var ifrm = $('iframe').remove();
-				if(ifrm.length > 0)ifrm.remove();
-			}
-			function getAula(){
-				var body = $('#content');
-				var disc = $('#disciplina').val();
-				var aulas = $('#aulas').val();
-				if (aulas > 0) {
-					remove()
-					var aula = aulas < 10 ? "0" + aulas.toString() : aulas.toString();
-					var links = getLinks(disc,aula);
-					var iframe = $('<iframe>', {
-						src: links.aula,
-						frameborder:0
-					})
-					body.append(iframe);
-					var download = $('.box.download');
-					download.find('a.download').attr('href',links.video);
-					download.show();
-				}
-			}
-			function setCombo(e){
-				var aulas = $('#aulas');
-				var count = e.find('option:selected').attr('data-length');
-				var index = $('<option>',{text:'Selecione a aula'});
-				aulas.empty().append(index);
-				for(var i = 0; i < count; i++){
-					var newOption = $('<option>',{text:'Aula '+(i+1),value:i+1});
-					aulas.append( newOption);
-				}
-				aulas.addClass('new');
-			}
-			function setSize(){
-				if(active){
-					active = false;
-					var div = $('#content');
-					div.height(0);
-					var sel = $('#selector').outerHeight(true);
-					var doc = $(window).height();
-					var dif = div.outerHeight(true) - div.height();
-					var total = (doc - sel) - dif;
-					div.height (total);
-					active = true;
-				}
-			}
-			$(document).ready(function(){
-				setSize();
-				$(window).resize(function() {
-					setSize();
-				});
-				$('#disciplina').focus();
-				$('#selector').delegate('.new','click',function(){
-					$(this).removeClass('new');
-				}).delegate('.new','focus',function(){
-					$(this).removeClass('new');
-				}).delegate('select','change',function(){
-					var e  = $(this);
-					if(e.is('#disciplina')){
-						setCombo(e);
-					}else{
-						getAula(e);
-					}
-				});
-				
-				$('.botao').delegate('a','click',function(){
-					var e  = $(this);
-					if(e.is('.refresh'))getAula();
-					if(e.is('.download'))return true;
-					if(e.is('.delete'))remove();
-					if(e.is('.credits'))$('#credits').toggle();
-					return false;
-				});
-				$('#credits').click(function(){
-					$(this).fadeOut('normal');
-				});
-			});
-			// -->
-		</script>
-	</head>
-	<body>
-		<div id="selector">
-			<div class="box disciplina">
-				<h2><strong>1</strong>Selecione a disciplina</h2>
-				<select id="disciplina">
-					<option selected="selected">Selecione uma disciplina</option>
-					<optgroup label="1° Periodo">
-						<option value="01" data-length="13">Introdução à Informática </option>
-						<option value="02" data-length="20">Construção de Página Web</option>
-						<option value="05" data-length="15">Projeto e Desenvolvimento de Algoritmos</option>
-					</optgroup>
-					<optgroup label="2° Periodo">
-						<option value="04" data-length="24">Fundamentos de Algoritmos para Computação</option>
-						<option value="06" data-length="15">Álgebra Linear</option>
-						<option value="10" data-length="10">Organização de Computadores</option>
-						<option value="29" data-length="12">Fundamentos de Programação[Python]</option>
-					</optgroup>
-					<optgroup label="3° Periodo">
-						<option value="07" data-length="36">Estrutura de Dados</option>
-						<option value="08" data-length="09">Matemática para Computação</option>
-						<option value="15" data-length="26">Física para Computação</option>
-						<option value="30" data-length="14">Programação com Interfaces Gráficas[Python]</option>
-					</optgroup>
-					<optgroup label="4° Periodo">
-						<option value="11" data-length="23">Modelagem de Informação</option>
-						<option value="12" data-length="12">Probabilidade e Estatística</option>
-						<option value="14" data-length="29">Banco de Dados</option>
-						<option value="16" data-length="12">Sistemas Operacionais</option>
-						<option value="21" data-length="13">Programação Orientada a Objetos[Java]</option>
-					</optgroup>
-					<optgroup label="5° Periodo">
-						<option value="18" data-length="24">Arquitetura e Projeto de Sistemas I</option>
-						<option value="19" data-length="18">Engenharia de Software</option>
-						<option value="20" data-length="14">Redes de Computadores I</option>
-						<option value="17" data-length="14">Programação de Aplicações Web[PHP]</option>
-					</optgroup>
-					<optgroup label="6° Periodo">
-						<option value="22" data-length="21">Arquitetura e Projeto de Sistemas II</option>
-						<option value="23" data-length="19">Computação Gráfica</option>
-						<option value="24" data-length="14">Empreendedorismo e Ética Profissional</option>
-						<option value="25" data-length="23">Redes de Computadores II</option>
-					</optgroup>
-					<optgroup label="Disciplinas descontinuadas">
-						<option value="09" data-length="14">Fundamentos de Programação[Pascal]</option>
-						<option value="13" data-length="17">Programação I[Lazarus/Delphi]</option>
-					</optgroup>
-				</select>
-			</div>
-			<div class="box aula">
-				<h2><strong>2</strong>Selecione a aula</h2>
-				<select id="aulas">
-					<option selected="selected"></option>
-				</select>
-			</div>
-			<div class="box download">
-				<h2><strong>3</strong>Baixar</h2>
-				<div class="botao">
-					<a href="#" class="download" title="Baixar Aula"><span></span>Download do vídeo</a>
-				</div>
-			</div>
-			<div class="bar">
-				<div class="botao">
-					<a href="#" class="refresh no-text" title="Recarregar Aula"><span></span>Recarregar</a>
-					<a href="#" class="delete no-text" title="Remover Aula"><span></span>Remover</a>
-					<a href="#" class="credits no-text" title="Créditos"><span></span>Créditos</a>
-				</div>
-			</div>
-			<div class="clear"></div>
-		</div>
-		<div id="content" class="app-loading">
-		</div>
-		<div id="credits">
-			<p><strong>Proto(SG)</strong>Desenvolvimento: html, javascript/jquery e css</p>
-			<p><strong>Educ. Bruno(NIT)</strong>Ideia de Projeto</p>
-			<p><strong>gustavomca(Saq)</strong>Download flv</p>
-			<p>1° versão - 04/07/2011 - html5 e css3 válidos</p>
-			<p>30/05/2021 - Versão 0.4.2</p>
-		</div>
-	
-</body></html>
+        body {
+            background: white;
+            position: relative;
+            color: black;
+            display: flex;
+            flex-direction: column;
+        }
+
+        ol, ul {
+            list-style: none;
+        }
+
+        table {
+            border-collapse: separate;
+            border-spacing: 0;
+        }
+
+        caption, th, td {
+            font-weight: normal;
+            text-align: left;
+        }
+
+        blockquote:before, blockquote:after, q:before, q:after {
+            content: "";
+        }
+
+        blockquote, q {
+            quotes: "" "";
+        }
+
+        /* reset css */
+        html, body {
+            height: 100%;
+            min-height: 100%;
+        }
+
+        *, html, body {
+            padding: 0;
+            margin: 0;
+            color: #333333;
+            font-family: Arial, Helvetica, sans-serif;
+
+        }
+
+        body > header {
+            background-color: #0071BC;
+            padding: 20px;
+            height: 100px;
+            display: flex;
+            flex-direction: row;
+        }
+
+        h2 {
+            font-weight: normal;
+            color: white;
+            font-size: 1.5em;
+        }
+
+        strong {
+            font-weight: bold;
+        }
+
+        h2 > strong {
+            font-size: 2em;
+            color: #FBB03B;
+            margin-right: 10px;
+        }
+
+        select {
+            border: 1px solid #333333;
+            font-family: "lucida grande", tahoma, verdana, arial, sans-serif;
+            font-size: 11px;
+            padding: 2px;
+            margin: 2px 0 0;
+            font-size: 13px;
+            height: 30px;
+            padding: 5px;
+            min-width: 330px;
+        }
+
+        select.new {
+            background-color: #00E300;
+        }
+
+        optgroup {
+            font-style: normal;
+            color: #CCC;
+            padding-left: 2px;
+
+        }
+
+        option {
+            background-color: white;
+            padding-left: 7px;
+        }
+
+        .box {
+            margin-right: 20px;
+        }
+
+        .aula strong {
+            color: #00E300;
+        }
+
+        .box.download {
+            display: none;
+        }
+
+        .box.misc {
+            align-self: baseline;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .box.misc img {
+            height: 20px;
+            display: block;
+        }
+
+        .box.misc .button {
+            color: #79C83D;
+        }
+        .box.misc .button:hover {
+            color: white;
+            background-color: #005084;
+        }
+
+        .download strong {
+            color: #E30000;
+        }
+
+        main {
+            background-color: #EEE;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        main .controle-aula {
+            background-color: #333333;
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+        }
+
+        iframe {
+            height: 100%;
+            width: 100%;
+            border: 0 none;
+            flex: 1;
+        }
+
+        #credits {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            margin-left: -240px;
+            margin-top: -50px;
+            z-index: 1000;
+            width: 420px;
+            padding: 30px;
+            background-color: black;
+            opacity: 0.8;
+        }
+
+        #credits p {
+            color: white;
+        }
+
+        #credits strong {
+            color: white;
+            margin-right: 10px;
+        }
+
+
+        /*botao*/
+        .button-group {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .button {
+            display: block;
+            height: 22px;
+            line-height: 22px;
+            padding: 5px 8px;
+            overflow: hidden;
+            font-size: 17px;
+            text-decoration: none;
+            color: #CCCCCC;
+            background-color: #444;
+            margin-left: 1px;
+            text-align: center;
+        }
+
+        .button.transparent,
+        .button-group.transparent {
+            background-color: transparent;
+        }
+
+        .button.transparent,
+        .button-group.transparent > button {
+            background-image: none !important;
+            background-color: transparent;
+        }
+
+        .button.active {
+            background-color: orange;
+        }
+
+        .button:hover {
+            color: #115884;
+        }
+
+        .button.transparent:hover,
+        .button-group.transparent > .button:hover {
+            background-image: none !important;
+            background-color: #CCCCCC;
+        }
+
+        .button.no-text {
+            width: 22px;
+        }
+
+        .button.no-text:before {
+            width: 22px;
+            display: block;
+        }
+
+        .hidden {
+            display: none !important;
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <style type="text/css" media="screen">
+        div.button-group {
+            filter: Alpha(Opacity=50);
+        }
+
+        div.button-group > a, #credits {
+            filter: Alpha(Opacity=80);
+        }
+
+        div.button-group > a:hover, div.button-group:hover {
+            filter: Alpha(Opacity=100);
+        }
+    </style>
+    <![endif]-->
+    <script type="text/javascript" src="jquery.min.js"></script>
+    <script type="text/javascript">
+        function getLessonClassRoomData(course, lesson) {
+            lesson = String(lesson).padStart(2, '0');
+
+            var url = 'http://edad.rnp.br/redirect.rio?file=/cederj/sistemas_comp/ead050';
+            var ext = '.flv';
+            var videoUrl = url + course + '/Aula_0' + lesson + '/Aula_0' + lesson + ext
+
+            url = 'http://edad.rnp.br/rioflashclient.php?xmlfile=/cederj/sistemas_comp/ead050';
+            ext = '.xml';
+            var classRoomUrl = url + course + '/Aula_0' + lesson + '/Aula_0' + lesson + ext
+
+            return {
+                videoUrl: videoUrl,
+                url: classRoomUrl
+            };
+        }
+
+        function swapFullscreenIcon(isInFullScreen) {
+            if (isInFullScreen) {
+                $('.button.fullscreen')
+                    .addClass("fa-compress")
+                    .removeClass("fa-expand");
+            } else {
+                $('.button.fullscreen')
+                    .removeClass("fa-compress")
+                    .addClass("fa-expand");
+            }
+        }
+
+        function toggleFullscreen() {
+            var isInFullScreen = (document.fullscreenElement && document.fullscreenElement !== null) ||
+                (document.webkitFullscreenElement && document.webkitFullscreenElement !== null) ||
+                (document.mozFullScreenElement && document.mozFullScreenElement !== null) ||
+                (document.msFullscreenElement && document.msFullscreenElement !== null);
+
+            var docElm = document.documentElement;
+            if (!isInFullScreen) {
+                swapFullscreenIcon(true);
+                if (docElm.requestFullscreen) {
+                    docElm.requestFullscreen();
+                } else if (docElm.mozRequestFullScreen) {
+                    docElm.mozRequestFullScreen();
+                } else if (docElm.webkitRequestFullScreen) {
+                    docElm.webkitRequestFullScreen();
+                } else if (docElm.msRequestFullscreen) {
+                    docElm.msRequestFullscreen();
+                }
+            } else {
+                swapFullscreenIcon(false);
+                if (document.exitFullscreen) {
+                    document.exitFullscreen();
+                } else if (document.webkitExitFullscreen) {
+                    document.webkitExitFullscreen();
+                } else if (document.mozCancelFullScreen) {
+                    document.mozCancelFullScreen();
+                } else if (document.msExitFullscreen) {
+                    document.msExitFullscreen();
+                }
+            }
+        }
+
+        function toggleSelector() {
+            var isVisible = $('#selector').is(":visible");
+            $('#selector').toggle();
+            if (isVisible) {
+                $('.button.toggle-selector')
+                    .addClass("fa-angle-double-down")
+                    .removeClass("fa-angle-double-up");
+            } else {
+                $('.button.toggle-selector')
+                    .removeClass("fa-angle-double-down")
+                    .addClass("fa-angle-double-up");
+            }
+        }
+
+        function hideClassRoomControllers() {
+            $('#content').find('.controle-aula').addClass('hidden');
+            $('#selector').show();
+        }
+
+        function showClassRoomControllers(videoUrl) {
+            var content = $('#content');
+            content.find('a.download').attr('href', videoUrl);
+            content.find('.controle-aula').removeClass('hidden');
+        }
+
+        function removeClassRoomIframe() {
+            var ifrm = $('#content').find('iframe').remove();
+            if (ifrm.length > 0) ifrm.remove();
+        }
+
+        function replaceClassRoomIframe(classRoomUrl, classVideoUrl) {
+            removeClassRoomIframe();
+            var iframe = $('<iframe>', {
+                src: classRoomUrl,
+                frameborder: 0
+            })
+
+            $('#content').append(iframe);
+
+            iframe.ready(function () {
+                iframe.off();
+                showClassRoomControllers(classVideoUrl);
+            });
+        }
+
+        function loadClassRoom() {
+            var course = $('#disciplina').val();
+            var lesson = $('#aulas').val();
+            if (lesson) {
+                var lessonClassRoomData = getLessonClassRoomData(course, lesson);
+                replaceClassRoomIframe(lessonClassRoomData.url, lessonClassRoomData.videoUrl);
+            }
+        }
+
+        function populateLessonsCombo() {
+            var totalLessons = $('#disciplina').find('option:selected').attr('data-length');
+            var index = $('<option>', {text: 'Selecione a aula'});
+            var lessonsCombo = $('#aulas');
+
+            lessonsCombo.addClass('new');
+            lessonsCombo.empty().append(index);
+
+            for (var i = 0; i < totalLessons; i++) {
+                var lesson = $('<option>', {text: 'Aula ' + (i + 1), value: i + 1});
+                lessonsCombo.append(lesson);
+            }
+        }
+
+        function removeClass() {
+            removeClassRoomIframe();
+            hideClassRoomControllers();
+            populateLessonsCombo()
+        }
+
+        $(document).ready(function () {
+            $('#disciplina').focus();
+
+            $('#selector').delegate('.new', 'click', function () {
+                $(this).removeClass('new');
+            }).delegate('.new', 'focus', function () {
+                $(this).removeClass('new');
+            }).delegate('select', 'change', function () {
+                var e = $(this);
+                if (e.is('#disciplina')) {
+                    populateLessonsCombo();
+                } else {
+                    loadClassRoom();
+                }
+            });
+
+            $('.button').on('click', function () {
+                var e = $(this);
+                if (e.is('.refresh')) loadClassRoom();
+                if (e.is('.download')) return true;
+                if (e.is('.delete')) removeClass();
+                if (e.is('.credits')) $('#credits').toggle();
+                if (e.is('.fullscreen')) toggleFullscreen();
+                if (e.is('.toggle-selector')) toggleSelector();
+                return false;
+            });
+
+            $('#credits').click(function () {
+                $(this).fadeOut('normal');
+            });
+        });
+    </script>
+</head>
+<body>
+<header id="selector" class="class-selector">
+    <div class="box disciplina">
+        <h2><strong>1</strong>Selecione a disciplina</h2>
+        <select id="disciplina">
+            <option selected="selected">Selecione uma disciplina</option>
+            <optgroup label="1° Periodo">
+                <option value="01" data-length="13">Introdução à Informática</option>
+                <option value="02" data-length="20">Construção de Página Web</option>
+                <option value="05" data-length="15">Projeto e Desenvolvimento de Algoritmos</option>
+            </optgroup>
+            <optgroup label="2° Periodo">
+                <option value="04" data-length="24">Fundamentos de Algoritmos para Computação</option>
+                <option value="06" data-length="15">Álgebra Linear</option>
+                <option value="10" data-length="10">Organização de Computadores</option>
+                <option value="29" data-length="12">Fundamentos de Programação[Python]</option>
+            </optgroup>
+            <optgroup label="3° Periodo">
+                <option value="07" data-length="36">Estrutura de Dados</option>
+                <option value="08" data-length="09">Matemática para Computação</option>
+                <option value="15" data-length="26">Física para Computação</option>
+                <option value="30" data-length="14">Programação com Interfaces Gráficas[Python]</option>
+            </optgroup>
+            <optgroup label="4° Periodo">
+                <option value="11" data-length="23">Modelagem de Informação</option>
+                <option value="12" data-length="12">Probabilidade e Estatística</option>
+                <option value="14" data-length="29">Banco de Dados</option>
+                <option value="16" data-length="12">Sistemas Operacionais</option>
+                <option value="21" data-length="13">Programação Orientada a Objetos[Java]</option>
+            </optgroup>
+            <optgroup label="5° Periodo">
+                <option value="18" data-length="24">Arquitetura e Projeto de Sistemas I</option>
+                <option value="19" data-length="18">Engenharia de Software</option>
+                <option value="20" data-length="14">Redes de Computadores I</option>
+                <option value="17" data-length="14">Programação de Aplicações Web[PHP]</option>
+            </optgroup>
+            <optgroup label="6° Periodo">
+                <option value="22" data-length="21">Arquitetura e Projeto de Sistemas II</option>
+                <option value="23" data-length="19">Computação Gráfica</option>
+                <option value="24" data-length="14">Empreendedorismo e Ética Profissional</option>
+                <option value="25" data-length="23">Redes de Computadores II</option>
+            </optgroup>
+            <optgroup label="Disciplinas descontinuadas">
+                <option value="09" data-length="14">Fundamentos de Programação[Pascal]</option>
+                <option value="13" data-length="17">Programação I[Lazarus/Delphi]</option>
+            </optgroup>
+        </select>
+    </div>
+    <div class="box aula">
+        <h2><strong>2</strong>Selecione a aula</h2>
+        <select id="aulas">
+            <option selected="selected"></option>
+        </select>
+    </div>
+    <div class="box misc">
+        <img src="https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=http%3A%2F%2Fprintln.github.io%2Fcompcederj_aulaweb%2F&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=visitas&edge_flat=true"/>
+        <a href="#" class="button credits no-text fab fa-dev fa-lg transparent" title="Desenvolvedores">Desenvolvedores</a>
+    </div>
+</header>
+<main id="content" class="app-loading">
+    <header class="controle-aula hidden">
+        <div class="button-group transparent">
+            <a href="#" class="button download no-text fa fa-file-download fa-lg" title="Baixar Aula .FLV">
+                Baixar Aula .FLV
+            </a>
+            <a href="#" class="button refresh no-text fa fa-sync-alt fa-lg" title="Recarregar Aula">
+                Recarregar
+            </a>
+            <a href="#" class="button delete no-text fa fa-window-close fa-lg" title="Remover Aula">
+                Remover
+            </a>
+            <a href="#" class="button fullscreen no-text fa fa-compress fa-lg" title="Tela cheia">
+                Tela cheia
+            </a>
+            <a href="#" class="button toggle-selector no-text fa fa-angle-double-up fa-lg" title="Esconder Seletor">
+                Esconder seletores
+            </a>
+        </div>
+    </header>
+</main>
+<section id="credits">
+    <p><strong>Proto(SG)</strong>Desenvolvimento: html, javascript/jquery e css</p>
+    <p><strong>Educ. Bruno(NIT)</strong>Ideia de Projeto</p>
+    <p><strong>gustavomca(Saq)</strong>Download flv</p>
+    <p>1° versão - 04/07/2011 - html5 e css3 válidos</p>
+    <p>31/05/2021 - Versão 0.5.0</p>
+</section>
+
+</body>
+</html>
