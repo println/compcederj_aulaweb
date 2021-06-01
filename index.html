@@ -288,7 +288,7 @@
             lesson = String(lesson).padStart(2, '0');
 
             var url = 'http://edad.rnp.br/redirect.rio?file=/cederj/sistemas_comp/ead050';
-            var ext = '.flv';
+            var ext = '.mp4';
             var videoUrl = url + course + '/Aula_0' + lesson + '/Aula_0' + lesson + ext
 
             url = 'http://edad.rnp.br/rioflashclient.php?xmlfile=/cederj/sistemas_comp/ead050';
@@ -366,7 +366,7 @@
 
         function showClassRoomControllers(videoUrl) {
             var content = $('#content');
-            content.find('a.download').attr('href', videoUrl);
+            content.find('a.download').attr('href', videoUrl).attr('download', videoUrl);
             content.find('.controle-aula').removeClass('hidden');
         }
 
@@ -514,8 +514,8 @@
 <main id="content" class="app-loading">
     <header class="controle-aula hidden">
         <div class="button-group transparent">
-            <a href="#" class="button download no-text fa fa-file-download fa-lg" title="Baixar Aula .FLV">
-                Baixar Aula .FLV
+            <a href="#" class="button download no-text fas fa-file-video fa-lg" title="Baixar Aula MP4" target="_blank">
+                Baixar Aula .MP4
             </a>
             <a href="#" class="button refresh no-text fa fa-sync-alt fa-lg" title="Recarregar Aula">
                 Recarregar
